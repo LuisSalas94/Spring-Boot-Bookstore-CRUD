@@ -34,4 +34,12 @@ public class BookController {
       List<Book> bookList = bookService.getAllBooks();
       return new ResponseEntity<>(bookList, HttpStatus.OK);
     }
+    @PutMapping("{id}")
+    // http://localhost:8080/api/books/1
+    public ResponseEntity<Book> updateBook(@PathVariable("id") Long bookId,@RequestBody Book book) {
+          book.setId(bookId);
+          Book updatedBook =  bookService.updateBook(book);
+          return new ResponseEntity<>(updatedBook, HttpStatus.OK);
+    }
+
 }
