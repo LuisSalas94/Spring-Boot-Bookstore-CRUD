@@ -4,4 +4,5 @@ import com.bookstore.springboot.entity.Book;
 
 public interface BookService {
     Book createBook(Book book);
+    Book getBookById(Long bookId);
 }
